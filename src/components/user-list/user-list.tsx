@@ -16,12 +16,16 @@ export class UserList extends Component<IUserListProps>  {
     const { users, fetching, sortUser } = this.props;
     return (
       <div>
-        <h1>Users :</h1>
-        <Search searcHandler={this.searchHandler} sortHandler={sortUser} />
+        <div>
+          <h1>Git Hub Users</h1>
+          <Search searcHandler={this.searchHandler} sortHandler={sortUser} />
+        </div>
+        <div>
         {fetching
           ? <Loading />
           : <User users={users} />
         }
+        </div>
       </div>
     );
   }

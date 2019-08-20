@@ -1,5 +1,6 @@
 import { USER_SORT, USER_FILTER, USER_FETCH, INPUT_SEARCH, USER_FETCH_REJECTED, USER_FETCH_FULFILLED } from '../type';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes } from 'react';
+
 export interface IAction {
     type? : string;
     payload? : Object & string & Array<IUser> & IError;
@@ -80,4 +81,10 @@ export interface IError {
 export interface ISearchProps {
     searcHandler (event : ChangeEvent<HTMLInputElement>) : void;
     sortHandler () : IUserSortAction;
+}
+export interface IInput extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+    label : string;
+}
+export interface IAuth {
+    authented : boolean;
 }

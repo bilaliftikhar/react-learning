@@ -3,17 +3,14 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { store } from './store';
-import { GlobalStyle } from './ui/GlobalStyle';
-import { ProtectedRoutes, PublicRoutes } from './routes';
-import { Auth } from './services/auth';
-const app = document.getElementById('root');
+import { Routes } from './routes';
+import { GlobalStyle } from './ui/global-style';
 
+const app = document.getElementById('root');
 render(
-  <Provider store={store} >
+  <Provider store={store}>
     <GlobalStyle />
     <Router>
-      <PublicRoutes />
-      <ProtectedRoutes authented={Auth} />
+      <Routes />
     </Router>
-  </Provider>
-  , app);
+  </Provider>, app);

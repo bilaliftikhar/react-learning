@@ -1,13 +1,14 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router';
-import { App } from '../../app';
-import { IAuth } from '../../interfaces';
+import React, { ReactElement } from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { RouteProps } from 'react-router';
+import { IProtectedRoute } from '../../interfaces';
+import { Auth } from '../../services/auth';
 
-export const ProtectedRoutes = ({authented} : IAuth) : JSX.Element =>
+export const ProtectedRoutes = ({ component: Component, ...rest } : IProtectedRoute) : ReactElement =>
   (
-    <div>
-      {authented ?
-          <Route exact path='/' component={App} /> :
-          <Redirect to='/sign-in'/>}
-    </div>
-    );
+    <Route {...rest} render={(props : RouteProps) : ReactElement => (
+      Auth.getAuth()
+        ? <Component {...props} />
+        : <Redirect to={{ pathname: '/sign-in', state: { from: props.location } }} />
+    )} />
+  );

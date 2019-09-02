@@ -7,10 +7,11 @@ import { Input } from '../../ui/input';
 export const Search = ({ searcHandler, sortHandler } : ISearchProps) : ReactElement => (
   <Styled>
     <Input
+      id='search'
       onChange={searcHandler}
       label='Search'
       placeholder='Enter text to Search...'
     />
-    <Sort onClick={sortHandler}>sort</Sort>
+    <Sort id='sort' onClick={sortHandler}>sort</Sort>
   </Styled>
 );

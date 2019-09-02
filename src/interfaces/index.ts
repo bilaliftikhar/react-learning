@@ -9,7 +9,7 @@ export interface IAction {
 export interface IUserAction {
   type : typeof USER_SORT | typeof USER_FILTER | typeof USER_FETCH | typeof INPUT_SEARCH |
   typeof USER_FETCH_FULFILLED | typeof USER_FETCH_REJECTED;
-  payload : string & Array<IUser> & IError;
+  payload? : any;
 }
 export interface IUserSortAction {
   type : typeof USER_SORT;

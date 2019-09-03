@@ -4,3 +4,4 @@ export const INPUT_SEARCH = 'INPUT_SEARCH';
 export const USER_FILTER = 'USER_FILTER';
 export const USER_FETCH = 'USER_FETCH';
 export const USER_SORT = 'USER_SORT';
+export const INITIAL = 'INITIAL';

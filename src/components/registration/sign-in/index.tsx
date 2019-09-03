@@ -30,6 +30,7 @@ export class SignIn extends Component<RouterProps> {
         <StyledHeading>Login</StyledHeading>
         <StyledEmail>
           <Input
+            id='email'
             type='text'
             name='email'
             value={email}
@@ -39,6 +40,7 @@ export class SignIn extends Component<RouterProps> {
         </StyledEmail>
         <StyledPassword>
           <Input
+            id='password'
             type='password'
             name='password'
             value={password}
@@ -47,7 +49,7 @@ export class SignIn extends Component<RouterProps> {
           />
         </StyledPassword>
         <StyledButton>
-          <RedButton onClick={this.handleSubmit}>Login</RedButton>
+          <RedButton id='button' onClick={this.handleSubmit}>Login</RedButton>
         </StyledButton>
       </Styled>
     );

@@ -1,4 +1,7 @@
-import { USER_SORT, USER_FILTER, USER_FETCH, INPUT_SEARCH, USER_FETCH_REJECTED, USER_FETCH_FULFILLED } from '../type';
+import {
+  USER_SORT, USER_FILTER, USER_FETCH, INPUT_SEARCH, USER_FETCH_REJECTED, USER_FETCH_FULFILLED,
+  INITIAL,
+} from '../type';
 import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, ComponentType } from 'react';
 
 export interface IAction {
@@ -8,8 +11,8 @@ export interface IAction {
 
 export interface IUserAction {
   type : typeof USER_SORT | typeof USER_FILTER | typeof USER_FETCH | typeof INPUT_SEARCH |
-  typeof USER_FETCH_FULFILLED | typeof USER_FETCH_REJECTED;
-  payload : string & Array<IUser> & IError;
+  typeof USER_FETCH_FULFILLED | typeof USER_FETCH_REJECTED | typeof INITIAL;
+  payload? : any;
 }
 export interface IUserSortAction {
   type : typeof USER_SORT;

@@ -32,6 +32,7 @@ export class SignUp extends Component<RouterProps> {
         <StyledHeading>Sign up</StyledHeading>
         <StyledEmail>
           <Input
+            id='email'
             type='text'
             name='email'
             value={email}
@@ -40,6 +41,7 @@ export class SignUp extends Component<RouterProps> {
         </StyledEmail>
         <StyledPassword>
           <Input
+            id='password'
             type='password'
             name='password'
             value={password}
@@ -48,6 +50,7 @@ export class SignUp extends Component<RouterProps> {
         </StyledPassword>
         <StyledUsername >
           <Input
+            id='username'
             type='text'
             name='username'
             value={username}
@@ -56,6 +59,7 @@ export class SignUp extends Component<RouterProps> {
         </StyledUsername>
         <StyledPhone >
           <Input
+            id='phone'
             type='text'
             name='phone'
             value={phone}

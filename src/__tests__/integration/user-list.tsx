@@ -1,50 +1,31 @@
 import { ReactWrapper } from 'enzyme';
-import { store } from '../store';
-import { INPUT_SEARCH, USER_FILTER, USER_FETCH, USER_SORT } from '../type';
-import * as selectors from '../selectors/user-list';
+import { USER_FETCH, USER_SORT } from '../../type';
+import * as selectors from '../../selectors/user-list';
 import {
-  IInputSearchAction,
-  IUserFilterAction,
-  IUserFetchAction,
-  IUserSortAction,
   IUserListProps,
-  IState,
   IUserListState,
-} from '../interfaces';
-import { UserList } from '../components/user-list';
-import { reducer } from '../reducers/user';
-import { setUpIntegratedTest } from '../utils';
-
-const getState = () : IState => store.getState();
+} from '../../interfaces';
+import { UserList } from '../../components/user-list';
+import { reducer } from '../../reducers/user';
+import { setUpIntegratedTest, getState } from '../../utils';
+import * as actions from '../../actions/users';
 
 describe('integration test user list component', () => {
   let wrapper : ReactWrapper;
   const props : IUserListProps = {
     users: [],
     fetching: true,
-    searchInput: (search : string) : IInputSearchAction => {
-      const inputSearchAction : IInputSearchAction = { type: INPUT_SEARCH, payload: search };
-      return inputSearchAction;
-    },
-    filterUser: () : IUserFilterAction => {
-      const userFilterAction : IUserFilterAction = { type: USER_FILTER };
-      return userFilterAction;
-    },
-    fetchUsers: () : IUserFetchAction  => {
-      const userFetchAction : IUserFetchAction = { type: USER_FETCH };
-      return userFetchAction;
-    },
-    sortUser: () : IUserSortAction  => {
-      const userSortAction : IUserSortAction = { type: USER_SORT };
-      return userSortAction;
-    },
+    searchInput: actions.searchInput,
+    filterUser: actions.filterUser,
+    fetchUsers: actions.fetchUsers,
+    sortUser: actions.sortUser,
   };
 
   beforeEach(() => {
     wrapper = setUpIntegratedTest(UserList, props);
   });
 
-  it('data fetched', () => {
+  it('data fetching', () => {
     const INITIAL_STATE : IUserListState = {
       fetching: true,
       error: '',

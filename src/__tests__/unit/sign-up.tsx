@@ -1,7 +1,7 @@
 import { createMemoryHistory } from 'history';
 import {  ShallowWrapper } from 'enzyme';
-import { setUpUnitTest } from '../utils';
-import { SignUp } from '../components/registration/sign-up';
+import { setUpUnitTest } from '../../utils';
+import { SignUp } from '../../components/registration/sign-up';
 
 describe('SignUp Component', () => {
 

@@ -1,5 +1,5 @@
-import * as selectors from '../selectors/user-list';
-import { IUserListState, IUser, IState } from '../interfaces';
+import * as selectors from '../../selectors/user-list';
+import { IUserListState, IUser, IState } from '../../interfaces';
 
 describe('Selectors', () => {
   it('FETCH', () => {

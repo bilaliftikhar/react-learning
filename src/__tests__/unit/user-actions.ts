@@ -1,5 +1,5 @@
-import * as actions from '../actions/users';
-import * as types from '../type';
+import * as actions from '../../actions/users';
+import * as types from '../../type';
 import {
   IUserFetchRejectedAction,
   IUserFetchFulfilledAction,
@@ -8,7 +8,7 @@ import {
   IUserFetchAction,
   IUserSortAction,
   IUser,
-} from '../interfaces';
+} from '../../interfaces';
 
 describe('Actions', () => {
 

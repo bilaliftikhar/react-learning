@@ -1,6 +1,6 @@
-import { reducer } from '../reducers/user';
-import * as types from '../type';
-import { IUserListState } from '../interfaces';
+import { reducer } from '../../reducers/user';
+import * as types from '../../type';
+import { IUserListState } from '../../interfaces';
 
 describe('Reducers', () => {
 

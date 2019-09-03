@@ -1,8 +1,8 @@
 import { createMemoryHistory } from 'history';
 import { ShallowWrapper } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { setUpUnitTest } from '../utils';
-import { SignIn } from '../components/registration/sign-in';
+import { setUpUnitTest } from '../../utils';
+import { SignIn } from '../../components/registration/sign-in';
 
 describe('Sign In Component', () => {
   let wrapper : ShallowWrapper;
@@ -18,7 +18,7 @@ describe('Sign In Component', () => {
     const value = 'devTest@react.com';
     wrapper.find('#email')
       .simulate('change', { target: { name: 'email', value } });
-    expect(wrapper.state('email')).toEqual(value);
+    expect(wrapper.find('#email').props().value).toEqual(value);
   });
 
   it('PASSWORD', () => {

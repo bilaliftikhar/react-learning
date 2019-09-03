@@ -1,7 +1,7 @@
 import { ShallowWrapper } from 'enzyme';
-import { setUpUnitTest } from '../utils';
-import { IUserProps } from '../interfaces';
-import { User } from '../components/user';
+import { setUpUnitTest } from '../../utils';
+import { IUserProps } from '../../interfaces';
+import { User } from '../../components/user';
 
 describe('User Component', () => {
   it('RENDER', () => {

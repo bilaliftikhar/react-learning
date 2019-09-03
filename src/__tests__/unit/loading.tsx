@@ -1,6 +1,6 @@
 import { ShallowWrapper } from 'enzyme';
-import { setUpUnitTest } from '../utils';
-import { Loading } from '../components/loading';
+import { setUpUnitTest } from '../../utils';
+import { Loading } from '../../components/loading';
 
 describe('Loading Component', () => {
 

@@ -5,7 +5,7 @@ import './app.css';
 export class App extends Component {
   render () : ReactNode {
     return (
-      <div className='App' >
+      <div className='App'>
         <UserList />
       </div>
     );

@@ -8,9 +8,10 @@ jobs:
       - checkout
 
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: Install Dependencies
+          command: yarn
 
       - run:
-          name: Print the Current Time
-          command: date
+          name: Run Test cases
+          command: yarn test
+
